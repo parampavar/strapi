@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Prompt } from 'react-router';
-import { get, isEqual, capitalize } from 'lodash';
+import { capitalize, get, isEqual, pickBy } from 'lodash';
 
 import pluginId from '../../pluginId';
 
@@ -11,7 +11,13 @@ import AttributesModalPicker from '../AttributesPickerModal';
 
 import { submitGroup, submitTempGroup } from '../App/actions';
 
-import { EmptyAttributesBlock, getQueryParameters } from 'strapi-helper-plugin';
+import {
+  EmptyAttributesBlock,
+  getQueryParameters,
+  ListWrapper,
+  ListHeader,
+  List,
+} from 'strapi-helper-plugin';
 
 /* eslint-disable no-extra-boolean-cast */
 class GroupPage extends React.Component {
@@ -79,6 +85,20 @@ class GroupPage extends React.Component {
 
     return title;
   };
+
+  getFeatureRelationShips = () => {
+    const attributes = this.getFeatureAttributes();
+    const relations = pickBy(attributes, attribute => {
+      return !!get(attribute, 'target', null);
+    });
+
+    console.log(relations);
+
+    return relations;
+  };
+
+  getFeatureRelationShipsLength = () =>
+    Object.keys(this.getFeatureRelationShips()).length;
 
   getModalType = () => getQueryParameters(this.getSearch(), 'modalType');
 
@@ -188,6 +208,15 @@ class GroupPage extends React.Component {
     } = this.props;
     const { removePrompt } = this.state;
 
+    const availableNumber = groups.length;
+    let title = `${pluginId}.table.groups.title.${
+      availableNumber > 1 ? 'plural' : 'singular'
+    }`;
+
+    if (this.getFeatureRelationShipsLength() > 0) {
+      title += ``;
+    }
+
     return (
       <div>
         <FormattedMessage id={`${pluginId}.prompt.content.unsaved`}>
@@ -222,12 +251,41 @@ class GroupPage extends React.Component {
               title="content-type-builder.home.emptyAttributes.title"
             />
           ) : (
-            <>
-              <p>GROUPS LIST</p>
-              {groups.map(group => {
-                <p>{group.name}</p>;
-              })}
-            </>
+            <ListWrapper>
+              <ListHeader
+                title={title}
+                titleValues={{ number: availableNumber }}
+                subtitle={title}
+                subtitleValues={{ number: availableNumber }}
+                relationTitle={title}
+                relationTitleValues={{ number: availableNumber }}
+                button={{
+                  kind: 'secondaryHotlineAdd',
+                  label: `${pluginId}.button.groups.create`,
+                  onClick: this.handleClick,
+                }}
+              />
+              {/* <List>
+                <table>
+                  <tbody>
+                    {displayedData.map(data => (
+                      <Row
+                        key={data.name}
+                        canOpenModal={canOpenModal}
+                        context={this.context}
+                        deleteGroup={deleteGroup}
+                        deleteModel={deleteModel}
+                        deleteTemporaryGroup={deleteTemporaryGroup}
+                        deleteTemporaryModel={deleteTemporaryModel}
+                        onClickGoTo={this.handleGoTo}
+                        {...data}
+                        viewType={type}
+                      />
+                    ))}
+                  </tbody>
+                </table>
+              </List> */}
+            </ListWrapper>
           )}
         </ViewContainer>
         <AttributesModalPicker

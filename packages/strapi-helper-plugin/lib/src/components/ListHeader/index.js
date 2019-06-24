@@ -6,13 +6,29 @@ import SubTitle from './SubTitle';
 import Title from './Title';
 import Wrapper from './Wrapper';
 
-function ListHeader({ button, subtitle, subtitleValues, title, titleValues }) {
+function ListHeader({
+  button,
+  subtitle,
+  subtitleValues,
+  title,
+  titleValues,
+  relationTitle,
+  relationTitleValue,
+}) {
   return (
     <Wrapper>
       {button && <Button {...button} />}
-      <FormattedMessage id={title} values={titleValues}>
-        {msg => <Title>{msg}</Title>}
-      </FormattedMessage>
+
+      {!!relationTitle ? (
+        <FormattedMessage id={title} values={titleValues}>
+          {msg => <Title>{msg}</Title>}
+        </FormattedMessage>
+      ) : (
+        <FormattedMessage id={title} values={titleValues}>
+          {msg => <Title>{msg}</Title>}
+        </FormattedMessage>
+      )}
+
       <FormattedMessage id={subtitle} values={subtitleValues}>
         {msg => <SubTitle>{msg}</SubTitle>}
       </FormattedMessage>
@@ -26,6 +42,8 @@ ListHeader.defaultProps = {
   subtitleValues: {},
   title: 'app.utils.defaultMessage',
   titleValues: {},
+  relationTitle: null,
+  relationTitleValue: {},
 };
 
 ListHeader.propTypes = {
@@ -34,6 +52,8 @@ ListHeader.propTypes = {
   subtitleValues: PropTypes.object,
   title: PropTypes.string,
   titleValues: PropTypes.object,
+  relationTitle: PropTypes.string,
+  relationTitleValue: PropTypes.object,
 };
 
 export default ListHeader;
