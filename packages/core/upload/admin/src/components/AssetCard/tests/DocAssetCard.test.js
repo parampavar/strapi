@@ -6,7 +6,7 @@ import en from '../../../translations/en.json';
 
 jest.mock('../../../utils', () => ({
   ...jest.requireActual('../../../utils'),
-  getTrad: x => x,
+  getTrad: (x) => x,
 }));
 
 jest.mock('react-intl', () => ({
@@ -44,7 +44,11 @@ describe('DocAssetCard', () => {
       .c0 {
         background: #ffffff;
         border-radius: 4px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #eaeaef;
         box-shadow: 0px 1px 4px rgba(33,33,52,0.1);
+        height: 100%;
       }
 
       .c3 {
@@ -405,6 +409,7 @@ describe('DocAssetCard', () => {
         <article
           aria-labelledby="card-1-title"
           class="c0"
+          height="100%"
           tabindex="0"
         >
           <div

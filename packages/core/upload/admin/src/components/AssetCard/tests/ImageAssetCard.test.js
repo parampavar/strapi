@@ -6,7 +6,7 @@ import en from '../../../translations/en.json';
 
 jest.mock('../../../utils', () => ({
   ...jest.requireActual('../../../utils'),
-  getTrad: x => x,
+  getTrad: (x) => x,
 }));
 
 jest.mock('react-intl', () => ({
@@ -18,6 +18,7 @@ describe('ImageAssetCard', () => {
     const { container } = renderTL(
       <ThemeProvider theme={lightTheme}>
         <ImageAssetCard
+          alt=""
           name="hello.png"
           extension="png"
           height={40}
@@ -50,7 +51,11 @@ describe('ImageAssetCard', () => {
       .c0 {
         background: #ffffff;
         border-radius: 4px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #eaeaef;
         box-shadow: 0px 1px 4px rgba(33,33,52,0.1);
+        height: 100%;
       }
 
       .c3 {
@@ -180,6 +185,8 @@ describe('ImageAssetCard', () => {
         height: 10.25rem;
         width: 100%;
         background: repeating-conic-gradient(#f6f6f9 0% 25%,transparent 0% 50%) 50% / 20px 20px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
       }
 
       .c18 {
@@ -397,6 +404,7 @@ describe('ImageAssetCard', () => {
         <article
           aria-labelledby="card-1-title"
           class="c0"
+          height="100%"
           tabindex="0"
         >
           <div
@@ -445,6 +453,7 @@ describe('ImageAssetCard', () => {
               class="c12"
             >
               <img
+                alt=""
                 aria-hidden="true"
                 class="c13"
                 src="http://somewhere.com/hello.png?width=40&height=40"

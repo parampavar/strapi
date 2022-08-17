@@ -21,7 +21,7 @@ describe('Role CRUD End to End', () => {
   });
 
   test('Can get the existing permissions', async () => {
-    let res = await rq({
+    const res = await rq({
       url: '/admin/permissions',
       method: 'GET',
     });
@@ -30,7 +30,7 @@ describe('Role CRUD End to End', () => {
 
     // Data is sorted to avoid error with snapshot when the data is not in the same order
     const sortedData = _.cloneDeep(res.body.data);
-    Object.keys(sortedData.sections).forEach(sectionName => {
+    Object.keys(sortedData.sections).forEach((sectionName) => {
       sortedData.sections[sectionName] = _.sortBy(sortedData.sections[sectionName], ['action']);
     });
     sortedData.conditions = sortedData.conditions.sort();
@@ -334,6 +334,18 @@ describe('Role CRUD End to End', () => {
                 "category": "plugins and marketplace",
                 "displayName": "Access the marketplace",
                 "subCategory": "marketplace",
+              },
+              Object {
+                "action": "admin::project-settings.read",
+                "category": "project",
+                "displayName": "Read the project level settings",
+                "subCategory": "general",
+              },
+              Object {
+                "action": "admin::project-settings.update",
+                "category": "project",
+                "displayName": "Update the project level settings",
+                "subCategory": "general",
               },
               Object {
                 "action": "admin::roles.create",
@@ -815,6 +827,18 @@ describe('Role CRUD End to End', () => {
                   "subCategory": "marketplace",
                 },
                 Object {
+                  "action": "admin::project-settings.read",
+                  "category": "project",
+                  "displayName": "Read the project level settings",
+                  "subCategory": "general",
+                },
+                Object {
+                  "action": "admin::project-settings.update",
+                  "category": "project",
+                  "displayName": "Update the project level settings",
+                  "subCategory": "general",
+                },
+                Object {
                   "action": "admin::provider-login.read",
                   "category": "single sign on",
                   "displayName": "Read",
@@ -1227,6 +1251,12 @@ describe('Role CRUD End to End', () => {
                   "category": "plugins and marketplace",
                   "displayName": "Access the marketplace",
                   "subCategory": "marketplace",
+                },
+                Object {
+                  "action": "admin::project-settings.update",
+                  "category": "project",
+                  "displayName": "Update the project level settings",
+                  "subCategory": "general",
                 },
                 Object {
                   "action": "admin::roles.create",

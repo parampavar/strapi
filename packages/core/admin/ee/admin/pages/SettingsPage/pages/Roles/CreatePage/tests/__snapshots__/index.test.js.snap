@@ -97,7 +97,7 @@ exports[`<CreatePage /> renders and matches the snapshot 1`] = `
   background: #f0f0ff;
 }
 
-.c13 .sc-ezHhwS {
+.c13 .sc-kBzgEd {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -177,7 +177,7 @@ exports[`<CreatePage /> renders and matches the snapshot 1`] = `
   border: 1px solid #4945ff;
 }
 
-.c16 .sc-ezHhwS {
+.c16 .sc-kBzgEd {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -616,6 +616,76 @@ exports[`<CreatePage /> renders and matches the snapshot 1`] = `
   line-height: 1.33;
 }
 
+.c6 {
+  color: #4945ff;
+  font-size: 0.75rem;
+  line-height: 1.33;
+}
+
+.c4 {
+  padding-right: 8px;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  position: relative;
+  outline: none;
+}
+
+.c3 svg path {
+  fill: #4945ff;
+}
+
+.c3 svg {
+  font-size: 0.625rem;
+}
+
+.c3:after {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  border-radius: 8px;
+  content: '';
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  left: -4px;
+  right: -4px;
+  border: 2px solid transparent;
+}
+
+.c3:focus-visible {
+  outline: none;
+}
+
+.c3:focus-visible:after {
+  border-radius: 8px;
+  content: '';
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  border: 2px solid #4945ff;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c44 {
   height: 100vh;
 }
@@ -697,76 +767,6 @@ exports[`<CreatePage /> renders and matches the snapshot 1`] = `
   outline: none;
 }
 
-.c6 {
-  color: #4945ff;
-  font-size: 0.75rem;
-  line-height: 1.33;
-}
-
-.c4 {
-  padding-right: 8px;
-}
-
-.c3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  position: relative;
-  outline: none;
-}
-
-.c3 svg path {
-  fill: #4945ff;
-}
-
-.c3 svg {
-  font-size: 0.625rem;
-}
-
-.c3:after {
-  -webkit-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  border-radius: 8px;
-  content: '';
-  position: absolute;
-  top: -4px;
-  bottom: -4px;
-  left: -4px;
-  right: -4px;
-  border: 2px solid transparent;
-}
-
-.c3:focus-visible {
-  outline: none;
-}
-
-.c3:focus-visible:after {
-  border-radius: 8px;
-  content: '';
-  position: absolute;
-  top: -5px;
-  bottom: -5px;
-  left: -5px;
-  right: -5px;
-  border: 2px solid #4945ff;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .c26 {
   border: 1px solid #d9d8ff;
   background: #f0f0ff;
@@ -774,7 +774,7 @@ exports[`<CreatePage /> renders and matches the snapshot 1`] = `
   color: #4945ff;
   border-radius: 4px;
   font-size: 0.75rem;
-  font-width: bold;
+  font-weight: bold;
 }
 
 @media (max-width:68.75rem) {
@@ -1008,7 +1008,7 @@ exports[`<CreatePage /> renders and matches the snapshot 1`] = `
                               id="textarea-1"
                               name="description"
                             >
-                              Created 2021–01–30T12:34:56+00:00
+                              Created April 1st, 2020
                             </textarea>
                           </div>
                         </div>

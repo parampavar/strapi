@@ -287,6 +287,14 @@ Array [
     "name": "Central Kurdish (ckb)",
   },
   Object {
+    "code": "kmr",
+    "name": "Northern Kurdish (kmr)",
+  },
+  Object {
+    "code": "sdh",
+    "name": "Southern Kurdish (sdh)",
+  },
+  Object {
     "code": "tzm",
     "name": "Central Morocco Tamazight (tzm)",
   },
@@ -931,6 +939,14 @@ Array [
     "name": "Igbo (Nigeria) (ig-NG)",
   },
   Object {
+    "code": "smn",
+    "name": "Inari Sami",
+  },
+  Object {
+    "code": "smn-FI",
+    "name": "Inari Sami (Finland)",
+  },
+  Object {
     "code": "id",
     "name": "Indonesian (id)",
   },
@@ -1021,6 +1037,10 @@ Array [
   Object {
     "code": "kn-IN",
     "name": "Kannada (India) (kn-IN)",
+  },
+  Object {
+    "code": "kaa",
+    "name": "Kara-Kalpak (kaa)",
   },
   Object {
     "code": "kk",
@@ -1307,6 +1327,22 @@ Array [
     "name": "Nepali (Nepal) (ne-NP)",
   },
   Object {
+    "code": "se",
+    "name": "Northern Sami",
+  },
+  Object {
+    "code": "se-FI",
+    "name": "Northern Sami (Finland)",
+  },
+  Object {
+    "code": "se-NO",
+    "name": "Northern Sami (Norway)",
+  },
+  Object {
+    "code": "se-SE",
+    "name": "Northern Sami (Sweden)",
+  },
+  Object {
     "code": "nd",
     "name": "North Ndebele (nd)",
   },
@@ -1529,6 +1565,14 @@ Array [
   Object {
     "code": "sa",
     "name": "Sanskrit (sa)",
+  },
+  Object {
+    "code": "gd",
+    "name": "Scottish Gaelic (gd)",
+  },
+  Object {
+    "code": "gd-GB",
+    "name": "Scottish Gaelic (United Kingdom)",
   },
   Object {
     "code": "seh",
@@ -1917,6 +1961,14 @@ Array [
   Object {
     "code": "ur-PK",
     "name": "Urdu (Pakistan) (ur-PK)",
+  },
+  Object {
+    "code": "ug",
+    "name": "Uyghur",
+  },
+  Object {
+    "code": "ug-CN",
+    "name": "Uyghur (China)",
   },
   Object {
     "code": "uz",

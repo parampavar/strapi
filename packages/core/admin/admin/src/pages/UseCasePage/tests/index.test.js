@@ -7,9 +7,14 @@ import { ThemeProvider, lightTheme } from '@strapi/design-system';
 import UseCasePage from '../index';
 
 jest.mock('../../../components/LocalesProvider/useLocalesProvider', () => () => ({
-  changeLocale: () => {},
+  changeLocale() {},
   localeNames: ['en'],
   messages: ['test'],
+}));
+jest.mock('../../../hooks/useConfigurations', () => () => ({
+  logos: {
+    auth: { custom: 'customAuthLogo.png', default: 'defaultAuthLogo.png' },
+  },
 }));
 
 jest.mock('@strapi/helper-plugin', () => ({
@@ -166,7 +171,7 @@ describe('Admin | UseCasePage', () => {
         width: 100%;
       }
 
-      .c35 .sc-iseIHH {
+      .c35 .sc-ezHhwS {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -782,6 +787,7 @@ describe('Admin | UseCasePage', () => {
                       alt=""
                       aria-hidden="true"
                       class="c15"
+                      src="defaultAuthLogo.png"
                     />
                     <div
                       class="c16"
